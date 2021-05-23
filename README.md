@@ -1,6 +1,7 @@
+# Comandos
+
 ouzcategui:~/angular-db-crud/server npm run build                      --vigilar los typescript y javascript
 ouzcategui:~/angular-db-crud/server npm run dev                         --vigilar las peticiones
-
 
 # ClientProjectBd
 
