@@ -1,0 +1,62 @@
+
+<form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
+
+  <div class="col-md-6">
+    <label for="from" class="form-label">From</label>
+    <select class="form-control" name="source" [(ngModel)]="source">
+      <option selected>Select an option</option>
+      <option *ngFor="let city of cities" [value]="city">
+        {{city}}
+    </option>
+    </select>
+  </div>
+
+  <button type="submit">Search Fligths</button>
+  <!--
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">From</label>
+      <select class="form-select" id="inlineFormSelectPref">
+        <option selected>Choose...</option>
+        <option value="1">Toronto</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">To</label>
+      <select class="form-select" id="inlineFormSelectPref">
+        <option selected>Choose...</option>
+        <option value="1">Rome</option>
+        <option value="2">Madrid</option>
+        <option value="2">Paris</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Depart</label>
+        <input class="form-control" type="date" [(NgModel)]= formflights.departure_time value="2021-08-19" id="example-date-input">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Password</label>
+        <input class="form-control" type="date" [(NgModel)]= formflights.arrival_time  value="2021-09-19" id="example-date-input">
+      </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary" (click)= "searchFligths">Search Fligths</button>
+    </div>-->
+  </form>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Airline</th>
+        <th scope="col">Outbound</th>
+        <th scope="col">Return</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let flight of flights">
+        <th scope="row">{{flight.airline}}</th>
+        <td>{{flight.departure_time}}</td>
+        <td>{{flight.arrival_time}}</td>
+        <td><button type="button" class="btn btn-primary">Select</button></td>
+      </tr>
+    </tbody>
+  </table>
