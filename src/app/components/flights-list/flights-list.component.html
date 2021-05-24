@@ -1,45 +1,32 @@
 
 <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
-
   <div class="col-md-6">
     <label for="from" class="form-label">From</label>
-    <select class="form-control" name="source" [(ngModel)]="source">
+      <select class="form-control" name="source" [(ngModel)]="model.source">
+        <option selected>Select an option</option>
+        <option *ngFor="let city of cities" [value]="city">
+          {{city}}
+        </option>
+      </select>
+  </div>
+
+  <div class="col-md-6">
+    <label for="from" class="form-label">to</label>
+    <select class="form-control" name="destination" [(ngModel)]="model.destination">
       <option selected>Select an option</option>
       <option *ngFor="let city of cities" [value]="city">
         {{city}}
     </option>
     </select>
   </div>
-
-  <button type="submit">Search Fligths</button>
-  <!--
-    <div class="col-md-6">
-      <label for="inputEmail4" class="form-label">From</label>
-      <select class="form-select" id="inlineFormSelectPref">
-        <option selected>Choose...</option>
-        <option value="1">Toronto</option>
-      </select>
-    </div>
-    <div class="col-md-6">
-      <label for="inputPassword4" class="form-label">To</label>
-      <select class="form-select" id="inlineFormSelectPref">
-        <option selected>Choose...</option>
-        <option value="1">Rome</option>
-        <option value="2">Madrid</option>
-        <option value="2">Paris</option>
-      </select>
-    </div>
-    <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Depart</label>
-        <input class="form-control" type="date" [(NgModel)]= formflights.departure_time value="2021-08-19" id="example-date-input">
-      </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Password</label>
-        <input class="form-control" type="date" [(NgModel)]= formflights.arrival_time  value="2021-09-19" id="example-date-input">
-      </div>
+        <label for="depart" class="form-label">Depart</label>
+        <input class="form-control" type="date" value="2021-08-19" id="example-date-input" [(ngModel)]="model.departure_time" (ngModelChange)="changeFn($event)">
+  </div>
+
     <div class="col-12">
-      <button type="submit" class="btn btn-primary" (click)= "searchFligths">Search Fligths</button>
-    </div>-->
+      <button type="submit" class="btn btn-primary">Search Fligths</button>
+    </div>
   </form>
 
 <table class="table">

@@ -14,7 +14,7 @@ export class searchFlight {
   styleUrls: ['./flights-list.component.css']
 })
 export class FlightsListComponent implements OnInit {
-  
+
   model = new searchFlight();
   flights: any;
 
@@ -39,8 +39,13 @@ export class FlightsListComponent implements OnInit {
     
   }
 
-  onSubmit(Searchform: searchFlight) {
-    console.log(Searchform)
+  onSubmit(SearchForm: any) {
+    console.log(SearchForm.value)
+  }
+
+  changeFn(e: any) {
+    console.log(e);
+    this.model.departure_time = e.target.value;
   }
 
   searchFligths(){
