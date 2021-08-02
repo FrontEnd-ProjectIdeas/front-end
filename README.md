@@ -1,11 +1,15 @@
-# Comandos
-```bash
-ouzcategui:~/angular-db-crud/server npm run build                      --vigilar los typescript y javascript
-ouzcategui:~/angular-db-crud/server npm run dev                        --vigilar las peticiones
-```
 # ClientProjectBd
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.1.
+
+## vigilar los typescript y javascript
+```bash
+user:~/angular-db-crud/server npm run build
+```
+## vigilar las peticiones
+```bash
+user:~/angular-db-crud/server npm run dev
+```
 
 ## Development server
 
